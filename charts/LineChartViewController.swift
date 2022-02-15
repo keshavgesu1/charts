@@ -16,23 +16,23 @@ class LineChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-customizeChart(dataPoints: employeeName, values: employeeAge.map{ Double($0) })
+        customizeChart(dataPoints: employeeName, values: employeeAge.map{ Double($0) })
         // Do any additional setup after loading the view.
     }
     
     func customizeChart(dataPoints: [String], values: [Double]) {
-      // TO-DO: customize the chart here
+        // TO-DO: customize the chart here
         var dataEntries: [ChartDataEntry] = []
-         for i in 0..<dataPoints.count {
-             let dataEntry = ChartDataEntry(x: values[i], y: Double(i))
-           dataEntries.append(dataEntry)
-         }
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(x: values[i], y: Double(i))
+            dataEntries.append(dataEntry)
+        }
         
-         // 2. Set ChartDataSet
+        // 2. Set ChartDataSet
         let lineChartDataSet = LineChartDataSet(entries: dataEntries, label: nil)
         let lineChartData = LineChartData(dataSet: lineChartDataSet)
         pieChartView.data = lineChartData
-
+        
     }
 
 }
